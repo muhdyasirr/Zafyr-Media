@@ -1,48 +1,40 @@
-import React from 'react';
-import building from '../assets/building.png';
-import Main from '../assets/Main.mp4';
-import World from "../assets/World.mp4" 
-import "../index.css";
+import React from "react";
+import Main from "../assets/Main.mp4"
+
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <section className="w-full h-screen bg-black py-16 flex justify-center items-center">
+      <div className="w-[92%] max-w-7xl bg-[#6C7CFF] rounded-3xl px-6 md:px-14 py-20 md:py-24 flex flex-col md:flex-row items-center justify-between gap-16">
+        
+        {/* LEFT TEXT */}
+        <div className="flex flex-col gap-6 max-w-xl">
+          <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
+            Dominate your
+            <br /> niche.
+          </h1>
+          <p className="text-white/85 text-lg md:text-xl leading-relaxed">
+            Go beyond influencer marketing software. Upgrade to AI-powered creator
+            marketing with automation and growth-driven analytics.
+          </p>
+          <button className="w-fit px-8 py-4 rounded-full bg-[#DFFF5E] text-black font-semibold text-lg hover:bg-[#cbea52] transition">
+            Get Started
+          </button>
+        </div>
 
-      {/* Background Video */}
-      <video
-        src={World}
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      />
-
-      {/* Dark Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
-
-      {/* Bottom Blur + Dark Fade */}
-      <div className="absolute bottom-0 left-0 w-full h-40 
-        bg-gradient-to-t from-black/90 to-transparent 
-        backdrop-blur-[4px] pointer-events-none">
+        {/* RIGHT VIDEO */}
+         <div className="w-full max-w-md rounded-[35px] overflow-hidden border-[8px] border-black shadow-2xl">
+          <video
+            src={Main}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        </div> 
       </div>
-
-      {/* Text and Button */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-          Your Dedicated Partner <br />
-          In Business Transformation
-        </h1>
-
-        <p className="mt-4 text-lg md:text-xl text-gray-200">
-          Guiding You Towards Unprecedented Success with Proven Strategies
-        </p>
-
-        <button className="mt-8 border border-white px-8 py-3 rounded-full text-lg hover:bg-white hover:text-black transition-all">
-          Contact Us →
-        </button>
-      </div>
-    </div>
+    </section>
   );
 };
 

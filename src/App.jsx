@@ -1,45 +1,37 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navabar from "./compoents/Navabar";
-import Hero from "./compoents/Hero";
-import Hero2 from "./compoents/Hero2";
-import Services from "./compoents/Services";
-import SlidingBrand from "./compoents/SlidingBrand";
-import Solutions from "./compoents/Solutions";
-import Footer from "./compoents/Footer";
-import CaseStudies from "./compoents/CaseStudies";
-
+import Navbar from "./compoents/Navbar"
+import Hero from "./compoents/Hero"
+import Services from "./compoents/Services"
+import Explore from "./compoents/Explore"
+import Why from './compoents/Why'
+import Contact from "./compoents/Contact"
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Navabar />
+    <>
+      <Navbar />
 
-      <Routes>
-        {/* Home */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <SlidingBrand />
-             <CaseStudies/>
-              <Services />
-              {/* <BookDemo/> */}
-              <Solutions />
-            </>
-          }
-        />
+      {/* Sections with scroll IDs */}
+      <div id="home">
+        <Hero />
+      </div>
 
-        {/* Other pages can go here */}
-        <Route path="/services" element={<Services />} />
-        <Route path="/solutions" element={<Solutions />} />
-        <Route path="/about" element={<Hero2 />} />
-        <Route path="/contact" element={<Footer />} />
-      </Routes>
+      <div id="services">
+        <Services />
+      </div>
 
-      <Footer />
-    </BrowserRouter>
+      <div id="about-us">
+        <Explore />
+      </div>
+
+      <div id="why">
+        <Why />
+      </div>
+
+      <div id="contact-us">
+        <Contact />
+      </div>
+    </>
   );
 }
