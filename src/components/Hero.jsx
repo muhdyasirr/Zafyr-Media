@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../assets/Main.mp4"
+import main from "../assets/Main.mp4"
 
 const Hero = () => {
   return (
@@ -37,7 +37,7 @@ const Hero = () => {
         {/* RIGHT VIDEO */}
         <div className="w-full max-w-sm sm:max-w-md rounded-[30px] overflow-hidden border-[6px] sm:border-[8px] border-black shadow-xl">
           <video
-            src={Main}
+            src={main}
             autoPlay
             loop
             muted
