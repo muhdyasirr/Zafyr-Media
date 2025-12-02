@@ -1,11 +1,11 @@
 import React from "react";
 
-import Navbar from "./compoents/Navbar"
-import Hero from "./compoents/Hero"
-import Services from "./compoents/Services"
-import Explore from "./compoents/Explore"
-import Why from './compoents/Why'
-import Contact from "./compoents/Contact"
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import Services from "./components/Services"
+import Explore from "./components/Explore"
+import Why from './components/Why'
+import Contact from "./components/Contact"
 
 export default function App() {
   return (
