@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../assets/Main.mp4";
+import Main from "../assets/Main.mp4"
 
 const Hero = () => {
   return (
