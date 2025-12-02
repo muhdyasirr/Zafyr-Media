@@ -1,102 +1,125 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import image1 from "../assets/image1.png";
-import image2 from "../assets/image2.png"
-import image3 from"../assets/image2.png"
+import image2 from "../assets/image2.png";
+import image3 from "../assets/image2.png";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  show: { opacity: 1, y: 0 },
+};
+
+const fadeSideRight = {
+  hidden: { opacity: 0, x: 60 },
+  show: { opacity: 1, x: 0 },
+};
+
+const fadeSideLeft = {
+  hidden: { opacity: 0, x: -60 },
+  show: { opacity: 1, x: 0 },
+};
+
 const InfluencerHero = () => {
+  // detect whether screen >= md
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsDesktop(window.innerWidth >= 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
   return (
-    <section className="w-full bg-white text-black px-6 md:px-20 py-32 space-y-40">
+    <section className="w-full bg-white text-black px-4 sm:px-8 md:px-16 lg:px-20 py-20 md:py-28 space-y-24 md:space-y-36">
 
-      {/* --- SECTION 1 (IMAGE LEFT) --- */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-
+      {/* ------------ SECTION 1 ------------ */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
         <motion.img
           src={image1}
           alt="Influencer Panel"
-          className="w-full max-w-md rounded-2xl shadow-xl mx-auto"
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          className="w-full max-w-[420px] md:max-w-full rounded-2xl shadow-xl mx-auto"
+          variants={isDesktop ? fadeUp : {}}
+          initial={isDesktop ? "hidden" : false}
+          whileInView={isDesktop ? "show" : false}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
         />
 
         <motion.div
-          className="flex flex-col gap-6"
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          className="flex flex-col gap-3 sm:gap-5 text-center md:text-left"
+          variants={isDesktop ? fadeSideRight : {}}
+          initial={isDesktop ? "hidden" : false}
+          whileInView={isDesktop ? "show" : false}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Manage <br /> influencer{" "}
+          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold leading-tight">
+            Manage influencer{" "}
             <span className="text-[#4CAF50]">relationships</span>
           </h1>
-          <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
-            Build your private influencer network and simplify access to
-            payments, contracts, contact details, and performance metrics.
+          <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
+            Build your private influencer network and simplify access to contracts, payments, contacts, and performance metrics.
           </p>
         </motion.div>
       </div>
 
-      {/* --- SECTION 2 (TEXT LEFT) --- */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-
+      {/* ------------ SECTION 2 ------------ */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
         <motion.div
-          className="flex flex-col gap-6 order-2 md:order-1"
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          className="flex flex-col gap-3 sm:gap-5 text-center md:text-left order-2 md:order-1"
+          variants={isDesktop ? fadeSideLeft : {}}
+          initial={isDesktop ? "hidden" : false}
+          whileInView={isDesktop ? "show" : false}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            AI-powered <br />{" "}
-            <span className="text-[#4CAF50]">creator insights</span>
+          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold leading-tight">
+            AI-powered <span className="text-[#4CAF50]">creator insights</span>
           </h1>
-          <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
-            Understand audience demographics, engagement rates, campaign
-            history, brand affinity and fraud protection signals with a single
-            dashboard.
+          <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
+            View demographics, engagement rates, campaign history, and fraud detection insights in one dashboard.
           </p>
         </motion.div>
 
         <motion.img
           src={image2}
-          alt="Influencer Panel"
-          className="w-full max-w-md rounded-2xl shadow-xl mx-auto order-1 md:order-2"
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          alt="AI Insights"
+          className="w-full max-w-[420px] md:max-w-full rounded-2xl shadow-xl mx-auto order-1 md:order-2"
+          variants={isDesktop ? fadeUp : {}}
+          initial={isDesktop ? "hidden" : false}
+          whileInView={isDesktop ? "show" : false}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
         />
       </div>
 
-      {/* --- SECTION 3 (IMAGE LEFT AGAIN) --- */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-
+      {/* ------------ SECTION 3 ------------ */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
         <motion.img
           src={image3}
-          alt="Influencer Panel"
-          className="w-full max-w-md rounded-2xl shadow-xl mx-auto"
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          alt="Campaign Automation"
+          className="w-full max-w-[420px] md:max-w-full rounded-2xl shadow-xl mx-auto"
+          variants={isDesktop ? fadeUp : {}}
+          initial={isDesktop ? "hidden" : false}
+          whileInView={isDesktop ? "show" : false}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
         />
 
         <motion.div
-          className="flex flex-col gap-6"
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          className="flex flex-col gap-3 sm:gap-5 text-center md:text-left"
+          variants={isDesktop ? fadeSideRight : {}}
+          initial={isDesktop ? "hidden" : false}
+          whileInView={isDesktop ? "show" : false}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Automate <br />{" "}
-            <span className="text-[#4CAF50]">creator campaigns</span>
+          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold leading-tight">
+            Automate <span className="text-[#4CAF50]">creator campaigns</span>
           </h1>
-          <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
-            Automate outreach, onboarding, deliverable tracking, approvals,
-            payments and reporting — everything from one platform.
+          <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
+            Automate outreach, deliverables, approvals, payments, and reporting — all from one platform.
           </p>
         </motion.div>
       </div>
