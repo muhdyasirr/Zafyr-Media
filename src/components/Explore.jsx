@@ -75,11 +75,10 @@ const InfluencerHero = () => {
           viewport={{ once: true }}
         >
           <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold leading-tight">
-            AI-powered <span className="text-[#4CAF50]">creator insights</span>
+          Seamless creator <span className="text-[#4CAF50]">campaign management</span>
           </h1>
           <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
-            View demographics, engagement rates, campaign history, and fraud detection insights in one dashboard.
-          </p>
+Coordinate outreach, track deliverables, approve content, and manage payments — everything you need in one smooth workflow.          </p>
         </motion.div>
 
         <motion.img
@@ -116,11 +115,10 @@ const InfluencerHero = () => {
           viewport={{ once: true }}
         >
           <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold leading-tight">
-            Automate <span className="text-[#4CAF50]">creator campaigns</span>
+            Manage creator <span className="text-[#4CAF50]">campaigns with ease</span>
           </h1>
           <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
-            Automate outreach, deliverables, approvals, payments, and reporting — all from one platform.
-          </p>
+Handle outreach, deliverables, approvals, payments, and reporting naturally and efficiently from a single platform.          </p>
         </motion.div>
       </div>
     </section>

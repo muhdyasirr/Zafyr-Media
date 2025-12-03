@@ -14,13 +14,12 @@ const Hero = () => {
         {/* LEFT TEXT */}
         <div className="flex flex-col gap-5 sm:gap-6 max-w-xl text-center md:text-left">
           <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-            Dominate your
-            <br /> niche.
+            Empower your 
+            <br />brand with creators.
           </h1>
 
           <p className="text-white/85 text-base sm:text-lg md:text-xl leading-relaxed">
-            Go beyond influencer marketing software. Upgrade to AI-powered creator
-            marketing with automation and growth-driven analytics.
+            Go beyond influencer marketing software.Discover talent, build meaningful collaborations, and accelerate your growth.
           </p>
 
           {/* Button — transition only on bigger screens */}
