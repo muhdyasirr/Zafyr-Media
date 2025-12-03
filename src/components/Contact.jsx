@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 
 const Contact = () => {
   const form = useRef();
@@ -10,19 +11,30 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_vreml8h",     // Your EmailJS Service ID
-        "template_tc8gmwp",    // Your Email Template ID
+        "service_vreml8h",    
+        "template_tc8gmwp",    
         form.current,
-        "N--eY9kIBlAjJcz9L"   // Your Public Key from EmailJS
+        "N--eY9kIBlAjJcz9L"   
       )
       .then(
         () => {
-          alert("Your inquiry has been sent successfully!");
+          Swal.fire({
+            title: "Message Sent!",
+            text: "Your inquiry has been successfully submitted.",
+            icon: "success",
+            confirmButtonColor: "#6C7CFF",
+          });
+
           form.current.reset();
         },
         (error) => {
+          Swal.fire({
+            title: "Oops!",
+            text: "Failed to send your message. Please try again.",
+            icon: "error",
+            confirmButtonColor: "#6C7CFF",
+          });
           console.log(error);
-          alert("Failed to send message. Please try again.");
         }
       );
   };
@@ -49,7 +61,6 @@ const Contact = () => {
         Fill out the form and our team will get back to you within 24 hours.
       </motion.p>
 
-      {/* FORM WITH EMAILJS */}
       <motion.form
         ref={form}
         onSubmit={sendEmail}
