@@ -6,6 +6,7 @@ import Services from "./components/Services"
 import Explore from "./components/Explore"
 import Why from './components/Why'
 import Contact from "./components/Contact"
+import How from './components/How'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
       <div id="about-us">
         <Explore />
       </div>
+      <How/>
 
       <div id="why">
         <Why />

@@ -3,111 +3,127 @@ import zafyr3 from "../assets/zafyr3.png";
 
 const services = [
   {
-    title: "Access to Top Creators",
+    title: "Thoughtful Creator Casting",
     desc:
-      "Partner with pre-vetted influencers trusted by their audiences. We match you with creators who naturally align with your brand.",
+      "We work closely with creators who have built real trust with their audiences. Every collaboration is chosen for voice, values, and cultural fit — not just reach.",
+    bg: "bg-[#F4F6FF]",
   },
   {
-    title: "Tailored Campaign Strategy",
+    title: "Campaigns Built Around Story",
     desc:
-      "We design custom influencer strategies that maximize reach, conversions, and long-term ROI — not generic posting schedules.",
+      "Every campaign starts with understanding your brand, audience, and culture. We shape creator-led ideas that feel natural, engaging, and aligned — not forced posting schedules.",
+    bg: "bg-[#FFF4E8]",
   },
   {
-    title: "Seamless Collaboration Management",
+    title: "From Brief to Delivery — We’ve Got It",
     desc:
-      "We manage creator onboarding, deliverables, deadlines, and approvals from start to finish so your campaigns run stress-free.",
+      "We manage creator outreach, contracts, briefs, timelines, approvals, and delivery, so your team can focus on the bigger picture while we keep everything running smoothly.",
+    bg: "bg-[#F1FAF7]",
   },
   {
-    title: "Data-Driven Performance Analytics",
+    title: "Creator-Led Content Production",
     desc:
-      "Monitor real-time insights with transparent metrics that help you optimize spending, reach, and audience engagement.",
+      "From influencer-led shoots to brand content and UGC, we support production end to end — concepts, shoots, edits, and final assets designed for social-first platforms.",
+    bg: "bg-[#F9F2FF]",
   },
 ];
 
 const Services = () => {
+  const handleScrollToContact = () => {
+    const contactSection = document.getElementById("contact-us");
+    contactSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="w-full bg-black text-white py-24 sm:py-28 px-4 sm:px-8 md:px-20">
-      
+    <section className="w-full bg-black  py-24 sm:py-28 px-4 sm:px-8 md:px-20">
+
       {/* TITLE */}
-      <h1 className="text-center text-3xl sm:text-4xl md:text-6xl font-extrabold mb-16 tracking-wide">
+      <h1 className="text-center text-white text-3xl sm:text-4xl md:text-6xl font-extrabold mb-20 tracking-wide">
         SERVICES
       </h1>
 
       {/* GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-7xl mx-auto">
-        
-        {/* First 4 Cards */}
+
+        {/* Service Cards */}
         {services.map((item, idx) => (
           <div
             key={idx}
-            className="
-              bg-[#101010] p-6 sm:p-8 rounded-2xl border border-white/10 shadow-md
+            className={`
+              ${item.bg}
+              p-6 sm:p-8 rounded-2xl border border-black/5
               min-h-[240px] flex flex-col
+              shadow-sm
 
-              /* Hover + transitions enabled only from sm and above */
               sm:cursor-pointer
               sm:transition sm:duration-300
-              sm:hover:shadow-[0_0_35px_rgba(108,124,255,0.4)]
+              sm:hover:shadow-xl
               sm:hover:-translate-y-2
-            "
+            `}
           >
-            <h2 className="text-xl font-semibold mb-3">{item.title}</h2>
-            <p className="text-gray-300 leading-relaxed text-[16px]">{item.desc}</p>
+            <h2 className="text-xl font-semibold mb-3 text-black">
+              {item.title}
+            </h2>
+            <p className="text-gray-700 leading-relaxed text-[16px]">
+              {item.desc}
+            </p>
           </div>
         ))}
 
-        {/* Image Box */}
+        {/* IMAGE BOX — FIXED DISPLAY */}
         <div
           className="
-            bg-[#151515] p-6 rounded-2xl border border-white/10 flex justify-center items-center shadow-lg
-            order-last lg:order-none
+             p-6 rounded-2xl border border-white           flex justify-center items-center
+            shadow-md
 
-            /* Hover only from sm */
-            sm:cursor-pointer
             sm:transition sm:duration-300
-            sm:hover:shadow-[0_0_40px_rgba(108,124,255,0.4)]
+            sm:hover:shadow-xl
             sm:hover:-translate-y-2
           "
         >
           <img
             src={zafyr3}
-            className="w-[220px] sm:w-[240px] md:w-[300px] object-contain"
-            alt="Service Illustration"
+            alt="Zafyr Media"
+            className="
+              max-w-full max-h-[280px]
+              object-contain
+            "
           />
         </div>
 
-        {/* Last Card */}
+        {/* LAST CARD */}
         <div
           className="
-            bg-[#101010] p-6 sm:p-8 rounded-2xl border border-white/10 shadow-md
+            bg-[#FFF1F2] p-6 sm:p-8 rounded-2xl border border-black/5
             min-h-[240px] flex flex-col
+            shadow-sm
 
-            /* Hover only from sm */
-            sm:cursor-pointer
             sm:transition sm:duration-300
-            sm:hover:shadow-[0_0_35px_rgba(108,124,255,0.4)]
+            sm:hover:shadow-xl
             sm:hover:-translate-y-2
           "
         >
-          <h2 className="text-xl font-semibold mb-3">Content That Converts</h2>
-          <p className="text-gray-300 leading-relaxed text-[16px]">
+          <h2 className="text-xl font-semibold mb-3 text-black">
+            Content That Converts
+          </h2>
+          <p className="text-gray-700 leading-relaxed text-[16px]">
             We work with influencers to produce high-impact creative content designed to captivate and drive measurable sales.
           </p>
         </div>
       </div>
 
       {/* CTA BUTTON */}
-      <div className="flex justify-center mt-16 md:mt-20">
+      <div className="flex justify-center mt-20">
         <button
+          onClick={handleScrollToContact}
           className="
-            px-8 sm:px-10 py-4 w-full sm:w-auto text-center rounded-full font-semibold text-lg
+            px-10 py-4 w-full sm:w-auto rounded-full
+            font-semibold text-lg text-white
             bg-[#6C7CFF]
 
-            /* Hover only from sm */
-            sm:hover:bg-[#5a66d6]
-            sm:transition sm:duration-300
-            sm:shadow-[0_0_25px_rgba(108,124,255,0.5)]
-            sm:hover:shadow-[0_0_35px_rgba(108,124,255,0.7)]
+            transition duration-300
+            hover:bg-[#5561d9]
+            shadow-lg hover:shadow-xl
           "
         >
           Contact Us to Boost Your Influencer Campaigns

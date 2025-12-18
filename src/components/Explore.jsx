@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import image1 from "../assets/image1.png";
+import image4 from "../assets/image4.png";
 import image2 from "../assets/image2.png";
 import image3 from "../assets/image2.png";
 
@@ -36,7 +36,7 @@ const InfluencerHero = () => {
       {/* ------------ SECTION 1 ------------ */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
         <motion.img
-          src={image1}
+          src={image4}
           alt="Influencer Panel"
           className="w-full max-w-[420px] md:max-w-full rounded-2xl shadow-xl mx-auto"
           variants={isDesktop ? fadeUp : {}}

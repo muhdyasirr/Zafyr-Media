@@ -1,7 +1,12 @@
 import React from "react";
 
-
 const Hero = () => {
+
+  const handleScrollToContact = () => {
+    const contactSection = document.getElementById("contact-us");
+    contactSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="w-full min-h-screen bg-black flex justify-center items-center px-4 py-14 sm:py-20 overflow-hidden">
       <div
@@ -14,22 +19,26 @@ const Hero = () => {
         {/* LEFT TEXT */}
         <div className="flex flex-col gap-5 sm:gap-6 max-w-xl text-center md:text-left">
           <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-            Empower your 
-            <br />brand with creators.
+            Influencer Campaigns
+            <br />Built on Human Connection
           </h1>
 
           <p className="text-white/85 text-base sm:text-lg md:text-xl leading-relaxed">
-            Go beyond influencer marketing software.Discover talent, build meaningful collaborations, and accelerate your growth.
+            We plan, manage, and produce influencer campaigns from start to finish,
+            including creator sourcing, content production, and campaign execution,
+            guided by culture, creativity, and real human insight.
           </p>
 
-          {/* Button — transition only on bigger screens */}
+          {/* BUTTON */}
           <button
             className="
-              mx-auto md:mx-0 w-fit px-8 py-4 rounded-full bg-[#DFFF5E] text-black font-semibold text-lg
+              mx-auto md:mx-0 w-fit px-8 py-4 rounded-full bg-[#DFFF5E]
+              text-black font-semibold text-lg
               sm:transition sm:duration-300 sm:hover:bg-[#cbea52]
             "
+            onClick={handleScrollToContact}
           >
-            Get Started
+            Talk to Us
           </button>
         </div>
 
