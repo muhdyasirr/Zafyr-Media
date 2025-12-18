@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import image8 from "../assets/image8.jpg";
-import image2 from "../assets/image2.png";
-import image3 from "../assets/image3.png";
+import image7 from "../assets/image7.png";
+import image10 from "../assets/image10.jpeg";
+import image9 from "../assets/image9.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -36,7 +36,7 @@ const InfluencerHero = () => {
       {/* ------------ SECTION 1 ------------ */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
         <motion.img
-          src={image8}
+          src={image7}
           alt="Influencer Panel"
           className="w-full max-w-[420px] md:max-w-full rounded-2xl shadow-xl mx-auto"
           variants={isDesktop ? fadeUp : {}}
@@ -82,7 +82,7 @@ Coordinate outreach, track deliverables, approve content, and manage payments â€
         </motion.div>
 
         <motion.img
-          src={image2}
+          src={image9}
           alt="AI Insights"
           className="w-full max-w-[420px] md:max-w-full rounded-2xl shadow-xl mx-auto order-1 md:order-2"
           variants={isDesktop ? fadeUp : {}}
@@ -96,7 +96,7 @@ Coordinate outreach, track deliverables, approve content, and manage payments â€
       {/* ------------ SECTION 3 ------------ */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
         <motion.img
-          src={image3}
+          src={image10}
           alt="Campaign Automation"
           className="w-full max-w-[420px] md:max-w-full rounded-2xl shadow-xl mx-auto"
           variants={isDesktop ? fadeUp : {}}

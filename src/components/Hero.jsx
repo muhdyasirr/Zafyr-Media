@@ -1,4 +1,5 @@
 import React from "react";
+import Hero2 from "../assets/Hero2.jpg"
 
 const Hero = () => {
 
@@ -11,7 +12,7 @@ const Hero = () => {
     <section className="w-full min-h-screen bg-black flex justify-center items-center px-4 py-14 sm:py-20 overflow-hidden">
       <div
         className="
-          w-full max-w-7xl bg-[#6C7CFF] rounded-3xl
+          w-full max-w-7xl bg-[#] rounded-3xl
           px-6 sm:px-10 md:px-14 py-14 sm:py-18 md:py-22
           flex flex-col md:flex-row items-center justify-between gap-12 sm:gap-16
         "
@@ -43,16 +44,14 @@ const Hero = () => {
         </div>
 
         {/* RIGHT VIDEO */}
-        <div className="w-full max-w-sm sm:max-w-md rounded-[30px] overflow-hidden border-[6px] sm:border-[8px] border-black shadow-xl">
-          <video
-            src="/Main.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <div className="w-full max-w-sm sm:max-w-md rounded-[30px] overflow-hidden">
+  <img
+    src={Hero2}   
+    alt="Main preview"
+    className="w-full h-full object-cover"
+  />
+</div>
+
       </div>
     </section>
   );
